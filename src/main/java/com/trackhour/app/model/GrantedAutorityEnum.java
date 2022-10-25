@@ -1,2 +1,6 @@
-package com.trackhour.app.model;public class GrantedAutorityEnum {
+package com.trackhour.app.model;
+
+public enum GrantedAutorityEnum {
+    ADM,
+    ADM2;
 }

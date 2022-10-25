@@ -1,6 +1,7 @@
 package com.trackhour.app.controller.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
@@ -13,6 +14,10 @@ public class UserRequest implements Serializable {
     @JsonProperty("password")
     @NotNull
     private String password;
+
+    public UsernamePasswordAuthenticationToken converterToUserNameAuthentication(){
+        return new UsernamePasswordAuthenticationToken(this.email, this.password);
+    }
 
     public UserRequest(String email, String password) {
         this.email = email;
